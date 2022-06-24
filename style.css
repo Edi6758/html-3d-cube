@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+body{
+    width: 100vh;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+.cube {
+    width: 200px;
+    height: 200px;
+    transform: rotateX(60deg) rotate(45deg);
+    transform-style: preserve-3d;
+    top: -100px;
+    animation: rot 13s linear infinite;
+}
+@keyframes rot {
+    0%{
+        transform: rotateX(60deg) rotate(45deg);
+    }
+    100%{
+        transform: rotateX(60deg) rotate(405deg);
+    }
+}
+
+.cube > div {
+    width:200px;
+    height: 200px;
+    position: absolute;
+    background-color: #fff;
+}
+
+#left {
+    left: 0px;
+    top: 0px;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    background: linear-gradient(90deg, rgb(44, 0, 18), #ff1493);
+} 
+
+#right {
+    right: 0px;
+    top: 0px;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+    background: linear-gradient(-90deg, rgb(44, 0, 18), #ff1493);
+}
+#front{
+    right: 0px;
+    top: 0px;
+    transform-origin: top;
+    background: linear-gradient(180deg, rgb(44, 0, 18), #ff1493);
+    transform: rotateX(-90deg);
+}
+#back{
+    right: 0px;
+    bottom: 0px;
+    transform-origin: bottom;
+    background: linear-gradient(0deg, rgb(44, 0, 18), #ff1493);
+    transform: rotateX(90deg);
+}
+
+#top {
+    background: rgb(44, 0, 18);
+}
+
+#bottom {
+    background: #ff1493bf;
+    width: 175px;
+    height: 175px;
+    left: 12px;
+    top: 12px;
+    transform: translateZ(-220px);
+    filter: blur(5px);
+    box-shadow: 0 0 160px 40px  #ff1493;
+}
